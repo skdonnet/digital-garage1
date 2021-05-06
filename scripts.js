@@ -3,3 +3,11 @@
 // TODO: display the vehicles into a listbox of sorts
 // TODO: delete buttons to delete a vehicle from the array?
 // TODO: random vehicle button that choose a random vehicle to take out for the day
+
+const form = document.querySelector('#form');
+const submit = document.querySelector('#subButton');
+
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  console.log(event.target.element[0].value);
+});
