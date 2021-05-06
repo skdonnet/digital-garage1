@@ -7,6 +7,14 @@ body {
 .inputs {
   display: flex;
   flex-direction: column;
+  justify-content: space-between 10px;
   margin-left: 4rem;
   margin-right: 35rem;
+}
+
+form {
+  align-items: center;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
 }
