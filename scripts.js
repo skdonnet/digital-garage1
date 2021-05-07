@@ -22,4 +22,6 @@ form.addEventListener('submit', event => {
     torque: event.target.elements[6].value,
     weight: event.target.elements[7].value,
   });
+
+  // render function here
 });
