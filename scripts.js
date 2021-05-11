@@ -6,8 +6,32 @@
 
 import { vehicles } from './data.js';
 
+const table = document.querySelector('table');
 const form = document.querySelector('#form');
+const tbody = document.querySelector('tbody');
 const submit = document.querySelector('#subButton');
+const template = document.querySelector('template');
+
+// render function here
+function renderV(automobiles) {
+  tbody.innerHTML = '';
+  automobiles.forEach(automobile => {
+    const newRow = template.content.cloneNode(true);
+    const tds = newRow.querySelectorAll('td');
+
+    tds[0].innerText = automobile.type;
+    tds[1].innerText = automobile.make;
+    tds[2].innerText = automobile.model;
+    tds[3].innerText = automobile.year;
+    tds[4].innerText = automobile.color;
+    tds[5].innerText = automobile.horsepower;
+    tds[6].innerText = automobile.torque;
+    tds[7].innerText = automobile.weight;
+
+    tbody.appendChild(newRow);
+  });
+  console.log(automobiles);
+}
 
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -23,5 +47,5 @@ form.addEventListener('submit', event => {
     weight: event.target.elements[7].value,
   });
 
-  // render function here
+  renderV(vehicles);
 });
