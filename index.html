@@ -14,6 +14,7 @@
     <title>Digital Garage</title>
   </head>
   <body>
+    <div class="entire">
     <h1>Digital Garage</h1>
     <form id="form">
       <div class="inputs">
@@ -31,40 +32,42 @@
         <input type="text" id="horsePower" />
         <label for="torque">Torque</label>
         <input type="text" id="torque" />
-        <label for="weight">weight</label>
+        <label for="weight">Weight</label>
         <input type="text" id="weight" />
         <button type="submit" id="subButton">Submit</button>
       </div>
-
-      <table>
-        <thead>
-          <tr>
-            <td>Type</td>
-            <td>Make</td>
-            <td>Model</td>
-            <td>Year</td>
-            <td>Color</td>
-            <td>Horse Power</td>
-            <td>Torque</td>
-            <td>Weight</td>
-            <tbody></tbody>
-          </tr>
-        </thead>
-      </table>
-
-      <template>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </template>
     </form>
+    <p>
+    <table>
+      <thead>
+        <tr>
+          <td>Type</td>
+          <td>Make</td>
+          <td>Model</td>
+          <td>Year</td>
+          <td>Color</td>
+          <td>Horse Power</td>
+          <td>Torque</td>
+          <td>Weight</td>
+          <tbody></tbody>
+        </tr>
+      </thead>
+    </table>
+
+    <template>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </template>
+  </p>
     <script src="./scripts.js" type="module"></script>
+  </div>
   </body>
 </html>
