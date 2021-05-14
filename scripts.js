@@ -6,15 +6,15 @@
 
 import { vehicles } from './data.js';
 
+const p = document.querySelector('p');
 const table = document.querySelector('table');
 const form = document.querySelector('#form');
 const tbody = document.querySelector('tbody');
-const submit = document.querySelector('#subButton');
 const template = document.querySelector('template');
 
 // render function here
 function renderV(automobiles) {
-  tbody.innerHTML = '';
+  tbody.innerText = '';
   automobiles.forEach(automobile => {
     const newRow = template.content.cloneNode(true);
     const tds = newRow.querySelectorAll('td');
@@ -30,7 +30,6 @@ function renderV(automobiles) {
 
     tbody.appendChild(newRow);
   });
-  console.log(automobiles);
 }
 
 form.addEventListener('submit', event => {
