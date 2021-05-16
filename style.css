@@ -1,6 +1,6 @@
 body {
   align-items: center;
-  background-color: #ffd495;
+  background-color: #ff7e30;
   display: flex;
   flex-direction: column;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -29,10 +29,16 @@ div {
   padding-top: 2px;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 .entire {
   background-color: grey;
   border: solid;
   border-color: white;
+  color: white;
   padding: 50px;
 }
 
