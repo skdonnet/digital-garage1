@@ -42,13 +42,24 @@ randButton.addEventListener('click', event => {
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  vehicles.push({
-    type: event.target.elements[0].value,
-    make: event.target.elements[1].value,
-    model: event.target.elements[2].value,
-    year: event.target.elements[3].value,
-    color: event.target.elements[4].value,
-  });
+  if (
+    event.target.elements[0].value !== '' &&
+    event.target.elements[1].value !== '' &&
+    event.target.elements[2].value !== '' &&
+    event.target.elements[3].value !== '' &&
+    event.target.elements[4].value !== ''
+  ) {
+    p.innerText = '';
+    vehicles.push({
+      type: event.target.elements[0].value,
+      make: event.target.elements[1].value,
+      model: event.target.elements[2].value,
+      year: event.target.elements[3].value,
+      color: event.target.elements[4].value,
+    });
 
-  renderV(vehicles);
+    renderV(vehicles);
+  } else {
+    p.innerText = 'MAKE SURE YOU FILL OUT THE ENTIRE FORM PLEASE';
+  }
 });
