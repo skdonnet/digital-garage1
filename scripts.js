@@ -11,8 +11,8 @@ const table = document.querySelector('table');
 const form = document.querySelector('#form');
 const tbody = document.querySelector('tbody');
 const template = document.querySelector('template');
+const randButton = document.getElementById('randButton');
 
-// render function here
 function renderV(automobiles) {
   tbody.innerText = '';
   automobiles.forEach(automobile => {
@@ -24,13 +24,20 @@ function renderV(automobiles) {
     tds[2].innerText = automobile.model;
     tds[3].innerText = automobile.year;
     tds[4].innerText = automobile.color;
-    tds[5].innerText = automobile.horsepower;
-    tds[6].innerText = automobile.torque;
-    tds[7].innerText = automobile.weight;
 
     tbody.appendChild(newRow);
   });
 }
+
+function randomVehicle() {
+  const randV = Math.floor(Math.random() * vehicles.length);
+  return randV;
+}
+
+randButton.addEventListener('click', event => {
+  const ranNum = randomVehicle();
+  p.innerText = `You should take out the ${vehicles[ranNum].year} ${vehicles[ranNum].make} ${vehicles[ranNum].model}`;
+});
 
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -41,9 +48,6 @@ form.addEventListener('submit', event => {
     model: event.target.elements[2].value,
     year: event.target.elements[3].value,
     color: event.target.elements[4].value,
-    horsepower: event.target.elements[5].value,
-    torque: event.target.elements[6].value,
-    weight: event.target.elements[7].value,
   });
 
   renderV(vehicles);
